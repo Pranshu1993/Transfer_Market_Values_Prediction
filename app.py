@@ -11,7 +11,7 @@ model = tf.keras.models.load_model('models/feed_forward_NN.h5')
 
 # initialize Flask app
 app = Flask(__name__)
-
+#run
 # define a function to preprocess the input data
 def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, rank_in_club_top_scorer,gk_handling,aggression,standing_tackle,gk_positioning, penalty_goals,min_per_match,defense_awareness_marking,year):
     # create a pandas dataframe with the input data
