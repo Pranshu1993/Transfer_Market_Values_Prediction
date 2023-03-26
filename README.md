@@ -1,5 +1,7 @@
 Case Study 2
 ==============================
+Introduction
+Football, as we all know, is an international sport that is particularly popular in Europe. The market value of footballers is one of the most intriguing aspects of football when it comes to federations, clubs, and players. The projection of market valuations of players has always been one of the most important considerations for a football club, and it can be influenced by a variety of factors. Our analysis includes a variety of athlete characteristics such as age, height, left or right foot, number of goals per season, and international impact.
 
 This is a web application designed to show the project structure for a machine learning model deployed using flask. This project features a machine learning model that has been trained to predict the value of players.
 
