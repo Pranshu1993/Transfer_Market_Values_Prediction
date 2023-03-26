@@ -8,6 +8,7 @@ scikit_learn==1.2.2
 setuptools==65.5.0
 tensorflow==2.12.0
 tensorflow_intel
+tensorflow
 
 
 #python3 -m  pipreqs.pipreqs use this to get libraries used in current directory
