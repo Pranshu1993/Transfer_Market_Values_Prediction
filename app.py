@@ -13,7 +13,7 @@ model = tf.keras.models.load_model('models/feed_forward_NN.h5')
 app = Flask(__name__)
 
 # define a function to preprocess the input data
-def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, aggression, rank_in_club_top_scorer, year, gk_positioning, penalty_goals, gk_handling, defense_awareness_marking, min_per_match, standing_tackle):
+def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, rank_in_club_top_scorer,gk_handling,aggression,standing_tackle,gk_positioning, penalty_goals,min_per_match,defense_awareness_marking,year):
     # create a pandas dataframe with the input data
     # input_dict = {"A":[minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, aggression, rank_in_club_top_scorer, year, gk_positioning, penalty_goals, gk_handling, defense_awareness_marking, min_per_match, standing_tackle]
     input_dict = pd.DataFrame({
@@ -47,15 +47,16 @@ def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_p
     'Sliding Tackle': [sliding_tackle],
     'GK Kicking': [gk_kicking],
     'GK Reflexes': [gk_reflexes],
-    'Aggression': [aggression],
     'rank_in_club_top_scorer': [rank_in_club_top_scorer],
+    'GK Handling': [gk_handling],
+    'Aggression': [aggression],
+    'Standing Tackle': [standing_tackle],
+
     'GK Positioning': [gk_positioning],
     'penalty_goals': [penalty_goals],
-    'GK Handling': [gk_handling],
-    'Defense Awareness/Marking': [defense_awareness_marking],
     'min_per_match': [min_per_match],
-    'Standing Tackle': [standing_tackle]
-
+    'Defense Awareness/Marking': [defense_awareness_marking],
+    
 
         
     })
@@ -136,7 +137,7 @@ def predict():
     standing_tackle = float(request.form['standing_tackle'])
 
     # preprocess the input data
-    input_data_scaled = preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, aggression, rank_in_club_top_scorer, year, gk_positioning, penalty_goals, gk_handling, defense_awareness_marking, min_per_match, standing_tackle)
+    input_data_scaled = preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_played_away, appearances_overall, appearances_home, appearances_away, goals_overall, goals_home, goals_away, assists_overall, assists_home, assists_away, clean_sheets_overall, clean_sheets_away, conceded_overall, conceded_home, conceded_away, rank_in_league_top_midfielders, skill_moves, crossing, finishing, short_passing, volleys, dribbling, sprint_speed, stamina, penalties, sliding_tackle, gk_kicking, gk_reflexes, rank_in_club_top_scorer,gk_handling,aggression,standing_tackle,gk_positioning, penalty_goals,min_per_match,defense_awareness_marking,year)
     # make a prediction
     prediction = model.predict(input_data_scaled)[0][0]
     # format the output as a JSON object
