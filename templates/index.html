@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Price Prediction</title>
+	<style>
+		body {
+			background-image: url("{{ url_for('static', filename='Fifa.jpg') }}");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		label {
+			color: black;
+			font-weight: bold;
+			font-size: 25px;
+			border-radius: 5px;
+		}
+		input[type="text"], input[type="number"] {
+			color: black;
+			font-size: 20px;
+			
+		}
+
+input[type="submit"] {
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 100px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
+}
+
+		form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+label {
+  grid-column: 1 / 2;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="number"] {
+  
+  width: 20%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+h1 {
+  font-size: 60px;
+  text-align:center;
+}
+
+		
+
+	</style>
+	
+</head>
+<
+  
+<body>
+	<h1>Footbal Player Market Value Prediction</h1>
+	<form action="{{ url_for('predict') }}" method="post">
+
+		<label for="name">Name:</label>
+		<input type="text" name="Name"><br><br>
+
+<label for="minutes_played_overall">Minutes Played Overall:</label>
+<input type="number" id="minutes_played_overall" name="minutes_played_overall"><br><br>
+
+<label for="minutes_played_home">Minutes Played Home:</label>
+<input type="number" id="minutes_played_home" name="minutes_played_home"><br><br>
+
+<label for="minutes_played_away">Minutes Played Away:</label>
+<input type="number" id="minutes_played_away" name="minutes_played_away"><br><br>
+
+<label for="appearances_overall">Appearances Overall:</label>
+<input type="number" id="appearances_overall" name="appearances_overall"><br><br>
+
+<label for="appearances_home">Appearances Home:</label>
+<input type="number" id="appearances_home" name="appearances_home"><br><br>
+
+<label for="appearances_away">Appearances Away:</label>
+<input type="number" id="appearances_away" name="appearances_away"><br><br>
+
+<label for="goals_overall">Goals Overall:</label>
+<input type="number" id="goals_overall" name="goals_overall"><br><br>
+
+<label for="goals_home">Goals Home:</label>
+<input type="number" id="goals_home" name="goals_home"><br><br>
+
+<label for="goals_away">Goals Away:</label>
+<input type="number" id="goals_away" name="goals_away"><br><br>
+
+<label for="assists_overall">Assists Overall:</label>
+<input type="number" id="assists_overall" name="assists_overall"><br><br>
+
+<label for="assists_home">Assists Home:</label>
+<input type="number" id="assists_home" name="assists_home"><br><br>
+
+<label for="assists_away">Assists Away:</label>
+<input type="number" id="assists_away" name="assists_away"><br><br>
+
+<label for="clean_sheets_overall">Clean Sheets Overall:</label>
+<input type="number" id="clean_sheets_overall" name="clean_sheets_overall"><br><br>
+
+<label for="clean_sheets_away">Clean Sheets Away:</label>
+<input type="number" id="clean_sheets_away" name="clean_sheets_away"><br><br>
+
+<label for="conceded_overall">Conceded Overall:</label>
+<input type="number" id="conceded_overall" name="conceded_overall"><br><br>
+
+<label for="conceded_home">Conceded Home:</label>
+<input type="number" id="conceded_home" name="conceded_home"><br><br>
+
+<label for="conceded_away">Conceded Away:</label>
+<input type="number" id="conceded_away" name="conceded_away"><br><br>
+
+<label for="rank_in_league_top_midfielders">Rank in League Top Midfielders:</label>
+<input type="number" id="rank_in_league_top_midfielders" name="rank_in_league_top_midfielders"><br><br>
+
+<label for="skill_moves">Skill Moves:</label>
+<input type="number" id="skill_moves" name="skill_moves"><br><br>
+
+<label for="crossing">Crossing:</label>
+<input type="number" id="crossing" name="crossing"><br><br>
+
+<label for="finishing">Finishing:</label>
+<input type="number" id="finishing" name="finishing"><br><br>
+
+<label for="short_passing">Short Passing:</label>
+<input type="number" id="short_passing" name="short_passing"><br><br>
+
+<label for="volleys">Volleys:</label>
+<input type="number" id="volleys" name="volleys" required><br><br>
+
+<label for="dribbling">Dribbling:</label>
+<input type="number" id="dribbling" name="dribbling" required><br><br>
+
+<label for="sprint_speed">Sprint Speed:</label>
+<input type="number" id="sprint_speed" name="sprint_speed" required><br><br>
+
+<label for="stamina">Stamina:</label>
+<input type="number" id="stamina" name="stamina" required><br><br>
+
+<label for="penalties">Penalties:</label>
+<input type="number" id="penalties" name="penalties" required><br><br>
+
+<label for="sliding_tackle">Sliding Tackle:</label>
+<input type="number" id="sliding_tackle" name="sliding_tackle" required><br><br>
+
+<label for="gk_kicking">GK Kicking:</label>
+<input type="number" id="gk_kicking" name="gk_kicking" required><br><br>
+
+<label for="gk_reflexes">GK Reflexes:</label>
+<input type="number" id="gk_reflexes" name="gk_reflexes" required><br><br>
+
+<label for="aggression">Aggression:</label>
+<input type="number" id="aggression" name="aggression" required><br><br>
+
+<label for="rank_in_club_top_scorer">Rank in Club Top Scorers:</label>
+<input type="number" id="rank_in_club_top_scorer" name="rank_in_club_top_scorer" required><br><br>
+
+<label for="year">Year:</label>
+<input type="number" id="year" name="year" required><br><br>
+
+<label for="gk_positioning">GK Positioning:</label>
+<input type="number" id="gk_positioning" name="gk_positioning" required><br><br>
+
+<label for="penalty_goals">Penalty Goals:</label>
+<input type="number" id="penalty_goals" name="penalty_goals" required><br><br>
+
+<label for="gk_handling">GK Handling:</label>
+<input type="number" id="gk_handling" name="gk_handling" required><br><br>
+
+<label for="defense_awareness_marking">Defense Awareness/Marking:</label>
+<input type="number" id="defense_awareness_marking" name="defense_awareness_marking" required><br><br>
+
+<label for="min_per_match">Minutes per Match:</label>
+<input type="number" id="min_per_match" name="min_per_match" required><br><br>
+
+<label for="standing_tackle">Standing Tackle:</label>
+<input type="number" id="standing_tackle" name="standing_tackle" required><br><br>
+
+<input type="submit" value="Predict">
+
+<h1>
+	{% if prediction_text %}
+	<p>{{ prediction_text }}</p>
+	{% endif %}
+</h1>
+	
+</body>
+</html>
