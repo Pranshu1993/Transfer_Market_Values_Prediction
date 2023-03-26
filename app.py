@@ -48,13 +48,12 @@ def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_p
     'GK Kicking': [gk_kicking],
     'GK Reflexes': [gk_reflexes],
     'rank_in_club_top_scorer': [rank_in_club_top_scorer],
-    'GK Handling': [gk_handling],
-    'Aggression': [aggression],
     'Standing Tackle': [standing_tackle],
-
-    'GK Positioning': [gk_positioning],
-    'penalty_goals': [penalty_goals],
+    'Aggression': [aggression],
     'min_per_match': [min_per_match],
+    'penalty_goals': [penalty_goals],
+    'GK Positioning': [gk_positioning],
+    'GK Handling': [gk_handling],
     'Defense Awareness/Marking': [defense_awareness_marking],
     
 
