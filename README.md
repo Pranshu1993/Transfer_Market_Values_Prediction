@@ -1,57 +1,44 @@
 Case Study 2
 ==============================
 
-A short description of the project.
-
-Project Organization
-------------
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+This is a web application designed to show the project structure for a machine learning model deployed using flask. This project features a machine learning model that has been trained to predict the value of players.
 
 
---------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+## Installation
+
+First clone the repo locally.
+~~~bash
+git clone https://github.com/Pranshu1993/Transfer_Market_Values_Prediction.git
+~~~
+
+Create a new virtual environment in the project directory.
+~~~bash
+python3 -m venv ./venv
+~~~
+
+Activate the virtual environment.
+~~~bash
+source venv/bin/activate
+~~~
+
+While in the virtual environment, install required dependencies from `requirements.txt`.
+
+~~~bash
+pip install -r ./requirements.txt
+~~~
+
+Now we can deploy the web application via
+~~~bash
+python app.py
+~~~
+
+and navigate to `http://127.0.0.1:5000/` to see it live. On this page, a user can then submit text into the text 
+field and receive predictions from the trained model and determine how much the player is worth with your own stats.
+
+
+The application may then be terminated with the following commands.
+~~~bash
+$ ^C           # exit flask application (ctrl-c)
+$ deactivate   # exit virtual environment
+~~~
