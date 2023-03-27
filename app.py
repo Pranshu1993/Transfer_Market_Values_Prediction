@@ -59,14 +59,10 @@ def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_p
 
         
     })
-<<<<<<< Updated upstream
-    input_data= pd.DataFrame.from_dict(input_dict)
-=======
     #input_data = pd.DataFrame(input_dict, index=[0])
     input_data=np.array(input_dict)
     print(type(input_data))
     # input_data= pd.DataFrame.from_dict(input_dict)
->>>>>>> Stashed changes
     # input_data = pd.DataFrame(list(input_dict.values())).T
 # scale the input data using the same scaler used during training
     # years=year
