@@ -59,7 +59,14 @@ def preprocess_input_data(minutes_played_overall, minutes_played_home, minutes_p
 
         
     })
+<<<<<<< Updated upstream
     input_data= pd.DataFrame.from_dict(input_dict)
+=======
+    #input_data = pd.DataFrame(input_dict, index=[0])
+    input_data=np.array(input_dict)
+    print(type(input_data))
+    # input_data= pd.DataFrame.from_dict(input_dict)
+>>>>>>> Stashed changes
     # input_data = pd.DataFrame(list(input_dict.values())).T
 # scale the input data using the same scaler used during training
     # years=year
@@ -140,12 +147,12 @@ def predict():
     # make a prediction
     prediction = model.predict(input_data_scaled)[0][0]
     # format the output as a JSON object
-    output = {
+    output = { 
         'Name': name,
         'Prediction': prediction
     }
 
-    return render_template('index.html', prediction_text='Price Prediction for {} is {}'.format(name, prediction))
+    return render_template('index.html', prediction_text='Price Prediction for {} is  €{} '.format(name, prediction))
 
 # start the Flask app
 if __name__ == '__main__':

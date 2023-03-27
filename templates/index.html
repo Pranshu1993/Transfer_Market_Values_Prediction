@@ -4,10 +4,11 @@
 	<title>Price Prediction</title>
 	<style>
 		body {
-			background-image: url("{{ url_for('static', filename='Fifa.jpg') }}");
+			background-image: url("{{ url_for('static', filename='Fifa2.jpg') }}");
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
+<<<<<<< Updated upstream
 		label {
 			color: black;
 			font-weight: bold;
@@ -19,8 +20,17 @@
 			font-size: 20px;
 			
 		}
+=======
+		.wrapper{
+	text-align: center;
+}
+.button{
+	position:absolute;
+	top : 50 ;
+}
+>>>>>>> Stashed changes
 
-input[type="submit"] {
+		input[type="submit"] {
   padding: 10px;
   background-color: green;
   color: white;
@@ -28,9 +38,14 @@ input[type="submit"] {
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+  align-items: center;
   width: 100px; /* Set the desired width */
   height: 50px; /* Set the desired height */
+  margin: 0 auto; /* Center horizontally */
+  display: block; /* Ensure margin rule works */
+  
 }
+
 
 		form {
   display: grid;
@@ -38,162 +53,222 @@ input[type="submit"] {
   grid-gap: 20px;
 }
 
-label {
-  grid-column: 1 / 2;
-  text-align: left;
-}
 
-input[type="text"],
-input[type="number"] {
-  
-  width: 20%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid gray;
-}
+
 h1 {
   font-size: 60px;
   text-align:center;
 }
 
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    zoom:1;              /* for IE7*/
+    vertical-align:middle;
+    margin-left:20px;
+	width: 400px;
+	
+}
+
+label {
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    zoom:1;              /* for IE7*/
+    float: left;
+    padding-top: 5px;
+    text-align: right;
+    width: 140px;
+}
 		
 
 	</style>
 	
 </head>
-<
+
   
 <body>
-	<h1>Footbal Player Market Value Prediction</h1>
+	<h1>Football Player Market Value Prediction</h1>
 	<form action="{{ url_for('predict') }}" method="post">
-
+<div class="block">
 		<label for="name">Name:</label>
-		<input type="text" name="Name"><br><br>
-
+		<input type="text" name="Name" required><br><br>
+</div>
+<div class="block">
 <label for="minutes_played_overall">Minutes Played Overall:</label>
-<input type="number" id="minutes_played_overall" name="minutes_played_overall"><br><br>
-
+<input type="number" id="minutes_played_overall" name="minutes_played_overall" required><br><br>
+</div>
+<div class="block">
 <label for="minutes_played_home">Minutes Played Home:</label>
-<input type="number" id="minutes_played_home" name="minutes_played_home"><br><br>
-
+<input type="number" id="minutes_played_home" name="minutes_played_home" required><br><br>
+</div>
+<div class="block">
 <label for="minutes_played_away">Minutes Played Away:</label>
-<input type="number" id="minutes_played_away" name="minutes_played_away"><br><br>
-
+<input type="number" id="minutes_played_away" name="minutes_played_away" required><br><br>
+</div>
+<div class="block">
 <label for="appearances_overall">Appearances Overall:</label>
-<input type="number" id="appearances_overall" name="appearances_overall"><br><br>
-
+<input type="number" id="appearances_overall" name="appearances_overall" required><br><br>
+</div>
+<div class="block">
 <label for="appearances_home">Appearances Home:</label>
-<input type="number" id="appearances_home" name="appearances_home"><br><br>
-
+<input type="number" id="appearances_home" name="appearances_home" required><br><br>
+</div>
+<div class="block">
 <label for="appearances_away">Appearances Away:</label>
-<input type="number" id="appearances_away" name="appearances_away"><br><br>
-
+<input type="number" id="appearances_away" name="appearances_away" required><br><br>
+</div>
+<div class="block">
 <label for="goals_overall">Goals Overall:</label>
-<input type="number" id="goals_overall" name="goals_overall"><br><br>
-
+<input type="number" id="goals_overall" name="goals_overall" required><br><br>
+</div>
+<div class="block">
 <label for="goals_home">Goals Home:</label>
-<input type="number" id="goals_home" name="goals_home"><br><br>
-
+<input type="number" id="goals_home" name="goals_home" required><br><br>
+</div>
+<div class="block">
 <label for="goals_away">Goals Away:</label>
-<input type="number" id="goals_away" name="goals_away"><br><br>
-
+<input type="number" id="goals_away" name="goals_away" required><br><br>
+</div>
+<div class="block">
 <label for="assists_overall">Assists Overall:</label>
-<input type="number" id="assists_overall" name="assists_overall"><br><br>
-
+<input type="number" id="assists_overall" name="assists_overall" required><br><br>
+</div>
+<div class="block">
 <label for="assists_home">Assists Home:</label>
-<input type="number" id="assists_home" name="assists_home"><br><br>
-
+<input type="number" id="assists_home" name="assists_home" required><br><br>
+</div>
+<div class="block">
 <label for="assists_away">Assists Away:</label>
-<input type="number" id="assists_away" name="assists_away"><br><br>
-
+<input type="number" id="assists_away" name="assists_away" required><br><br>
+</div>
+<div class="block">
 <label for="clean_sheets_overall">Clean Sheets Overall:</label>
-<input type="number" id="clean_sheets_overall" name="clean_sheets_overall"><br><br>
-
+<input type="number" id="clean_sheets_overall" name="clean_sheets_overall" required><br><br>
+</div>
+<div class="block">
 <label for="clean_sheets_away">Clean Sheets Away:</label>
-<input type="number" id="clean_sheets_away" name="clean_sheets_away"><br><br>
-
+<input type="number" id="clean_sheets_away" name="clean_sheets_away" required><br><br>
+</div>
+<div class="block">
 <label for="conceded_overall">Conceded Overall:</label>
-<input type="number" id="conceded_overall" name="conceded_overall"><br><br>
-
+<input type="number" id="conceded_overall" name="conceded_overall" required><br><br>
+</div>
+<div class="block">
 <label for="conceded_home">Conceded Home:</label>
-<input type="number" id="conceded_home" name="conceded_home"><br><br>
-
+<input type="number" id="conceded_home" name="conceded_home" required><br><br>
+</div>
+<div class="block">
 <label for="conceded_away">Conceded Away:</label>
-<input type="number" id="conceded_away" name="conceded_away"><br><br>
-
+<input type="number" id="conceded_away" name="conceded_away" required><br><br>
+</div>
+<div class="block">
 <label for="rank_in_league_top_midfielders">Rank in League Top Midfielders:</label>
-<input type="number" id="rank_in_league_top_midfielders" name="rank_in_league_top_midfielders"><br><br>
-
+<input type="number" id="rank_in_league_top_midfielders" name="rank_in_league_top_midfielders" required><br><br>
+</div>
+<div class="block">
 <label for="skill_moves">Skill Moves:</label>
-<input type="number" id="skill_moves" name="skill_moves"><br><br>
-
+<input type="number" id="skill_moves" name="skill_moves" required><br><br>
+</div>
+<div class="block">
 <label for="crossing">Crossing:</label>
-<input type="number" id="crossing" name="crossing"><br><br>
-
+<input type="number" id="crossing" name="crossing" required><br><br>
+</div>
+<div class="block">
 <label for="finishing">Finishing:</label>
-<input type="number" id="finishing" name="finishing"><br><br>
-
+<input type="number" id="finishing" name="finishing" required><br><br>
+</div>
+<div class="block">
 <label for="short_passing">Short Passing:</label>
-<input type="number" id="short_passing" name="short_passing"><br><br>
-
+<input type="number" id="short_passing" name="short_passing" required><br><br>
+</div>
+<div class="block">
 <label for="volleys">Volleys:</label>
 <input type="number" id="volleys" name="volleys" required><br><br>
-
+</div>
+<div class="block">
 <label for="dribbling">Dribbling:</label>
 <input type="number" id="dribbling" name="dribbling" required><br><br>
-
+</div>
+<div class="block">
 <label for="sprint_speed">Sprint Speed:</label>
 <input type="number" id="sprint_speed" name="sprint_speed" required><br><br>
-
+</div>
+<div class="block">
 <label for="stamina">Stamina:</label>
 <input type="number" id="stamina" name="stamina" required><br><br>
-
+</div>
+<div class="block">
 <label for="penalties">Penalties:</label>
 <input type="number" id="penalties" name="penalties" required><br><br>
-
+</div>
+<div class="block">
 <label for="sliding_tackle">Sliding Tackle:</label>
 <input type="number" id="sliding_tackle" name="sliding_tackle" required><br><br>
-
+</div>
+<div class="block">
 <label for="gk_kicking">GK Kicking:</label>
 <input type="number" id="gk_kicking" name="gk_kicking" required><br><br>
-
+</div>
+<div class="block">
 <label for="gk_reflexes">GK Reflexes:</label>
 <input type="number" id="gk_reflexes" name="gk_reflexes" required><br><br>
-
+</div>
+<div class="block">
 <label for="aggression">Aggression:</label>
 <input type="number" id="aggression" name="aggression" required><br><br>
-
+</div>
+<div class="block">
 <label for="rank_in_club_top_scorer">Rank in Club Top Scorers:</label>
 <input type="number" id="rank_in_club_top_scorer" name="rank_in_club_top_scorer" required><br><br>
-
+</div>
+<div class="block">
 <label for="year">Year:</label>
 <input type="number" id="year" name="year" required><br><br>
-
+</div>
+<div class="block">
 <label for="gk_positioning">GK Positioning:</label>
 <input type="number" id="gk_positioning" name="gk_positioning" required><br><br>
-
+</div>
+<div class="block">
 <label for="penalty_goals">Penalty Goals:</label>
 <input type="number" id="penalty_goals" name="penalty_goals" required><br><br>
-
+</div>
+<div class="block">
 <label for="gk_handling">GK Handling:</label>
 <input type="number" id="gk_handling" name="gk_handling" required><br><br>
-
+</div>
+<div class="block">
 <label for="defense_awareness_marking">Defense Awareness/Marking:</label>
 <input type="number" id="defense_awareness_marking" name="defense_awareness_marking" required><br><br>
-
+</div>
+<div class="block">
 <label for="min_per_match">Minutes per Match:</label>
 <input type="number" id="min_per_match" name="min_per_match" required><br><br>
-
+</div>
+<div class="block">
 <label for="standing_tackle">Standing Tackle:</label>
 <input type="number" id="standing_tackle" name="standing_tackle" required><br><br>
-
-<input type="submit" value="Predict">
-
+</div>
+<div class="block" style="width:100%;margin-left: 50%;">
+	
+<input type="submit" value="Predict"><br><br>
 <h1>
 	{% if prediction_text %}
 	<p>{{ prediction_text }}</p>
 	{% endif %}
 </h1>
+
+</div>
+
+
+<!-- <h1>
+	{% if prediction_text %}
+	<p>{{ prediction_text }}</p>
+	{% endif %}
+</h1> -->
 	
 </body>
 </html>
